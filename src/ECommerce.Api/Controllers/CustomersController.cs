@@ -16,6 +16,12 @@ namespace ECommerce.Api.Controllers
             _mediator = mediator;
         }
 
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok(new List<int>{1,2,3,4});
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateCustomer([FromBody] CreateCustomerCommand command)
         {
