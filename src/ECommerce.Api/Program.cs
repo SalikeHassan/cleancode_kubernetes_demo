@@ -4,6 +4,8 @@ using ECommerce.Application.Interfaces;
 using ECommerce.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using ECommerce.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Api;
 public class Program
@@ -13,6 +15,8 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        builder.Services.AddDbContext<ECommerceDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
         builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
         builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
