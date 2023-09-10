@@ -1,0 +1,24 @@
+﻿## .NET Core
+bin/
+obj/
+out/
+*.userprefs
+
+## Rider (JetBrains IDE)
+.idea/
+
+## macOS
+.DS_Store
+
+## Visual Studio for Mac
+.vscode/
+*.slnx.user
+*.user
+*.suo
+*.cache
+*.dist
+*.InstallLog
+*.InstallState
+*.pidb
+*.sln.docstates
+*.bak
